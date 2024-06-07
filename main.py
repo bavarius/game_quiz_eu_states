@@ -42,8 +42,8 @@ def key_press(event):
 
 
 def quit_game():
-    with open('zu_lernen.txt', 'w', encoding='iso-8859-15') as f:
-        f.write(f"Diese {len(all_countries)} Länder musst Du Dir noch einprägen:\n{'\n'.join(all_countries)}\n")
+    with open('zu_lernen.txt', 'w', encoding='utf-8') as f:
+        f.write("Diese {} Länder musst Du Dir noch einprägen:\n{}\n".format(len(all_countries), '\n'.join(all_countries)))
     window.destroy()
 
 
