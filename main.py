@@ -15,9 +15,14 @@ num_guessed_countries = 0
 
 
 def enter_country():
+    global num_guessed_countries
+    # Allow leaving the game via OK-Button or by pressing Enter, if all countries are filled-in
+    if num_guessed_countries >= len(countries):
+        quit_game()
+        return
+
     guessed_country = entry_country.get().title()
     if guessed_country in all_countries:
-        global num_guessed_countries
         num_guessed_countries += 1
         canvas.create_text(
             countries[guessed_country]['state_x'],
